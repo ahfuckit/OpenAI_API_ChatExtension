@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPT Chatbox Browser Extension</title>
+</head>
+<body>
+  <h1>GPT Chatbox Browser Extension</h1>
+
+  <p>A browser extension that provides a customizable ChatGPT interface using OpenAI's API.<br/>The extension adds a popup chat interface through a custom <code>&LeftAngleBracket; api-chat-box &RightAngleBracket;</code>html web component.</p>
+  <h2>Features</h2>
+  <ul>
+    <li>Clean and modern chat interface</li>
+    <li>Customizable themes (Light/Dark/System/Custom)</li>
+    <li>Configurable API settings:
+      <ul>
+        <li>OpenAI API key management</li>
+        <li>Model selection</li>
+        <li>Temperature control</li>
+        <li>Token limit adjustment</li>
+      </ul>
+    </li>
+    <li>Chat history management</li>
+    <li>Responsive design</li>
+    <li>Secure data storage</li>
+  </ul>
+
+  <h2>Usage</h2>
+  <ol>
+    <li>Install the extension</li>
+    <li>Click the extension icon to open the chat popup</li>
+    <li>Enter your OpenAI API key in Settings</li>
+    <li>Start chatting with GPT!</li>
+  </ol>
+
+  <h2>Technical Details</h2>
+  <h4>The extension is built using:</h4>
+  <ul>
+    <li>Custom Elements v1 API</li>
+    <li>Shadow DOM for encapsulation</li>
+    <li>OpenAI Chat Completions API</li>
+    <li>Secure local storage for API keys</li>
+  </ul>
+
+  <h2>APIChatBox Component</h2>
+  <h4>The custom element provides:</h4>
+  <pre><code>
+// Create a new chat instance
+Contract.chat()
+
+// Create with custom settings
+APIChatBox.create(apiKey, placeholder, theme)
+
+{
+  apiKey: "your-openai-key",
+  model: "gpt-4o-mini", 
+  temperature: 0.7,
+  maxTokens: 250,
+  theme: "light|dark|system|custom"
+}
+  </code></pre>
+  <hr/>
+      <h4>Installation</h4>
+  <ul>
+    <li>Manually:
+      <ol>
+        <li>Clone the repository</li>
+        <li>Go to chrome://extensions/</li>
+        <li>Enable Developer mode</li>
+        <li>Click "Load unpacked"</li>
+        <li>Select the extension directory</li>
+      </ol>
+    </li>
+    <li>Chrome Web Store:
+      <ol>
+        <li>Download from the official Web Store</li>
+        <li>Go to the extensions settings page of your browser</li>
+        <li>Set your preferences for permissions <sup>(requires none other than storage)</sup></li>
+        <li>In the menubar in your browser find the extensions icon and select GPT ChatBox to open the popup</li>
+        <li>Click the "Settings" menu button and enter your OpenAI API key <sup>(it will not be sent to a server and will be encrypted and stored in your local browser storage. Only you and OpenAI will be able see the actual key)</sup></li>
+      </ol>
+    </li>
+  </ul>
+
+  <h2>Files</h2>
+  <ul>
+    <li>manifest.json - Extension configuration</li>
+    <li>popup.html - Extension popup interface</li>
+    <li>chatgptchatbox.js - Main component implementation</li>
+  </ul>
+
+  <h2>License</h2>
+  <p>Copyright © 2024 CSingendonk</p>
+</body>
+</html>

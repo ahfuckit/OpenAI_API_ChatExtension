@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "API Chatbox",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["file://*.js"],
+      "js": ["chatgptchatbox.js"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "description": "Clean and modern interface for interacting with OpenAI API and your own models/assistants. No tracking nor data collection. No cookies and no ads. No sketchy services. No registration required."
+}
